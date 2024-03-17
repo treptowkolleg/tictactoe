@@ -10,7 +10,7 @@ class DefaultController extends AbstractController
     // Symbol für Spieler 2
     private const PLAYER_2 = 'x-lg';
 
-    public function index()
+    public function index(): string
     {
         // Links für Reset und Spielen generieren
         $resetLink = $this->server->generateUrlFromString(DefaultController::class, 'reset');
@@ -29,6 +29,7 @@ class DefaultController extends AbstractController
             'session' => $_SESSION
         ]);
     }
+
 
     public function reset()
     {
