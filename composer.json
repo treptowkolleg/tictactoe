@@ -1,0 +1,26 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"TreptowKolleg\\Tictactoe\\" : "src"
+		}
+	},
+	"name" : "treptowkolleg/tictactoe",
+	"type" : "project",
+	"description" : "PHP TicTacToe Game",
+	"license" : "MIT",
+	"require" : {
+		"php" : ">=8.0",
+		"twig/twig" : "~3.8",
+		"treptowkolleg/api" : "dev-master"
+	},
+	"authors" : [{
+			"name" : "Benjamin Wagner",
+			"role" : "Developer",
+			"email" : "123292918+treptowkolleg@users.noreply.github.com",
+			"homepage" : "https://it.treptowkolleg.de"
+		}
+	],
+	"support" : {
+		"issues" : "https://it.treptowkolleg.de"
+	}
+}

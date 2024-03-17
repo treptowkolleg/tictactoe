@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="de" data-theme="user">
+<head>
+    {# Meta-Angaben #}
+	<meta charset="utf-8">
+	<meta name="color-scheme" content="light dark">
+	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+	<meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="TicTacToe PHP-Spiel">
+    
+    {# Website-Titel #}
+	<title>{% block title %}{{ title ?? '' }}{% endblock %}</title>
+	
+	{# FavIcon-Angaben #}
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    
+    {# Style-Sheets #}    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+    	.cell{
+    		height: 100px;
+    		margin: 20px;
+    		background-color: var(--pico-muted-border-color);
+    		display: flex;
+    		align-items: center;
+  			justify-content: center;
+    	}
+    	
+    	.flex-container{
+    		align-items: stretch;
+    		display: flex;
+    		align-items: center;
+  			justify-content: center;
+  			height: 100%;
+    	}
+    	
+    	.info{    		
+  			background-color: var(--pico-muted-border-color);
+  		}
+    </style>
+</head>
+<body class="container">
+	{# Navigation #} 
+	<header>{% block header %}{% endblock %}</header>
+	
+	{# Seiteninhalt #} 
+	<main>{% block body %}{% endblock %}</main>
+	
+	{# Fußzeile #} 
+	<footer>{% block footer %}{% endblock %}</footer>
+	<script src="/assets/js/switcher.js"></script>
+</body>
+</html>
