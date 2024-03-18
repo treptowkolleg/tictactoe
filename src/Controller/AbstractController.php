@@ -4,6 +4,7 @@ namespace TreptowKolleg\Tictactoe\Controller;
 use TreptowKolleg\Api\Session;
 use TreptowKolleg\Tictactoe\Server\Response;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
 abstract class AbstractController
@@ -23,9 +24,12 @@ abstract class AbstractController
             'cache' => PROJECT_DIR . 'var/cache',
             'debug' => true
         ]);
-        $this->view->addExtension(new \Twig\Extension\DebugExtension());
+        $this->view->addExtension(new DebugExtension());
         $this->server = new Response();
         $this->view->addGlobal('root', $this->server->generateLink(''));
+
+        //$link = $this->server->generateUrlFromString(GameController::class,'index');
+        $this->view->addGlobal('game_link', '');
     }
 
     public function getView()
