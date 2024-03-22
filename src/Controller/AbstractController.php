@@ -2,6 +2,7 @@
 namespace TreptowKolleg\Tictactoe\Controller;
 
 use TreptowKolleg\Api\Session;
+use TreptowKolleg\Tictactoe\Extension\LinkExtension;
 use TreptowKolleg\Tictactoe\Server\Response;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
@@ -27,12 +28,10 @@ abstract class AbstractController
         $this->view->addExtension(new DebugExtension());
         $this->server = new Response();
         $this->view->addGlobal('root', $this->server->generateLink(''));
-
-        //$link = $this->server->generateUrlFromString(GameController::class,'index');
-        $this->view->addGlobal('game_link', '');
+        $this->view->addExtension(new LinkExtension());
     }
 
-    public function getView()
+    public function getView(): Environment
     {
         return $this->view;
     }
